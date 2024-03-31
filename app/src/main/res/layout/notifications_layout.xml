@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Верхняя панель с заголовком и кнопкой "назад" -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:title="Notifications"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:contentInsetStartWithNavigation="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <!-- Содержимое уведомлений -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/messageNotificationsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Message Notifications"
+            android:textColor="@color/material_blue_grey_900"
+            android:textSize="18sp" />
+
+        <!-- Пункты уведомлений -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Пункт "Private Chats" -->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/privateChatsSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Private Chats"
+                android:textColor="@color/material_blue_grey_900"
+                android:textSize="16sp"
+                android:checked="true"
+                android:paddingVertical="12dp"
+                android:thumbTint="@color/material_blue_grey_800"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"/>
+
+            <!-- Пункт "Group Chats" -->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/groupChatsSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Group Chats"
+                android:textColor="@color/material_blue_grey_900"
+                android:textSize="16sp"
+                android:checked="true"
+                android:paddingVertical="12dp"
+                android:thumbTint="@color/material_blue_grey_800"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"/>
+
+            <!-- Пункт "Do Not Disturb" -->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/doNotDisturbSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Do Not Disturb"
+                android:textColor="@color/material_blue_grey_900"
+                android:textSize="16sp"
+                android:checked="false"
+                android:paddingVertical="12dp"
+                android:thumbTint="@color/material_blue_grey_800"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

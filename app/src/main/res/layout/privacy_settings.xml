@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Верхняя панель с названием экрана и кнопкой назад -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Privacy Settings"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationContentDescription="Back"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <!-- Список настроек приватности -->
+    <LinearLayout
+        android:id="@+id/privacySettingsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topAppBar"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Пункт Private Chats -->
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/privateChatsCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Private Chats"
+            android:textColor="@android:color/black"/>
+
+        <!-- Пункт Group Chats -->
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/groupChatsCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Group Chats"
+            android:textColor="@android:color/black"/>
+
+        <!-- Пункт Do Not Disturb -->
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/doNotDisturbCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Do Not Disturb"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+</RelativeLayout>
